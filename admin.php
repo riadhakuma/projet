@@ -18,7 +18,7 @@ include('db.php');
     
     <section>
         <h2>Liste des Montres en Stock</h2>
-        <table border="1" style="width:100%; color:white; border-collapse: collapse;">
+        <table border="1" style="width:100%; color:white; border-collapse: collapse;">//border collapse bach ylsqo les tableau
             <tr style="background-color: black;">
                 <th>Modèle</th>
                 <th>Prix (DA)</th>
@@ -27,8 +27,8 @@ include('db.php');
             </tr>
             <?php
             $res = mysqli_query($conn, "SELECT * FROM montres");
-            while($m = mysqli_fetch_assoc($res)) {
-                echo "<tr>";
+            while($m = mysqli_fetch_assoc($res)) {//resultat en tant que tab
+                echo "<tr>";//t row w t data 
                 echo "<td>".$m['modele']."</td>";
                 echo "<td>".$m['prix']."</td>";
                 echo "<td>".$m['quantite_stock']."</td>";

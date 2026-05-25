@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['user_id'])) {
     header("refresh:4; url=index.php");
 } else {
     echo "Veuillez vous connecter pour acheter.";
-    header("refresh:2; url=login.php");
+    header("Location: login.php");
+    exit();
 }
 ?>

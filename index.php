@@ -12,13 +12,13 @@ session_start();
         
         .navbar { 
             background: #222; 
-            padding: 15px; 
-            display: flex; 
-            justify-content: space-between; 
+            padding: 15px; /*espace entre cadre et texte*/
+            display: flex; /*alligne les enfant dakhel la mere*/
+            justify-content: space-between; /*aligne droite gauche au bout plus fragh entre les deux*/
             align-items: center;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid black;/*ligne*/
         }
-        .navbar a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
+        .navbar a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }/*margin ydir vide*/
         .navbar a:hover { color: cyan; }
         .solde { color: lime; font-weight: bold; margin-left: 10px; }
         .admin-link { color: orange !important; border: 1px solid orange; padding: 5px; border-radius: 5px; }
@@ -28,10 +28,10 @@ session_start();
 
     <nav class="navbar">
         <div>
-            <a href="index.php" style="font-size: 1.2em;"> Ma Boutique</a>
+            <a href="index.php" style="font-size: 1.2em;"> Ma Boutique</a>//deux fois le pere em
         </div>
         <div>
-            <?php if(isset($_SESSION['user_role'])): ?>
+            <?php if(isset($_SESSION['user_role'])): ?>//nftho condition hka ida vrai ydir wch moraha sinon ysoti hka bach maytkhltoch les "" etc
                 <span>Connecté : <?php echo $_SESSION['user_role']; ?></span>
                 
                 <?php if($_SESSION['user_role'] == 'client'): ?>
@@ -61,7 +61,7 @@ session_start();
 
     <section>
         <?php
-        // Requête pour récupérer les montres
+        // Requete des montres
         $requete = "SELECT * FROM montres";
         $resultat = mysqli_query($conn, $requete);
 

@@ -1,18 +1,17 @@
 <?php 
 include('db.php'); 
 session_start();
-
-// Sécurité Admin
+//en cas dacces sans etre admin
 if($_SESSION['user_role'] != 'admin') { header("Location: login.php"); }
 
-// 1. RÉCUPÉRATION : On récupère les infos de la montre avant de modifier
+// info dee la montre
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
     $res = mysqli_query($conn, "SELECT * FROM montres WHERE id=$id");
     $data = mysqli_fetch_assoc($res);
 }
 
-// 2. MISE À JOUR : Quand on clique sur le bouton de validation
+// update
 if(isset($_POST['update'])) {
     $id_cache = $_POST['id'];
     $mod = $_POST['modele'];
@@ -22,7 +21,7 @@ if(isset($_POST['update'])) {
     $sql = "UPDATE montres SET modele='$mod', prix='$pri', quantite_stock='$sto' WHERE id=$id_cache";
     
     if(mysqli_query($conn, $sql)) {
-        header("Location: admin.php"); // Retour à la liste après modification
+        header("Location: admin.php");//retour apres modif
     }
 }
 ?>

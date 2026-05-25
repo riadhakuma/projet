@@ -9,7 +9,7 @@
 <body>
     <section>
         <h2>Ajouter une nouvelle montre</h2>
-        <form action="ajouter.php" method="POST" enctype="multipart/form-data">
+        <form action="ajouter.php" method="POST" enctype="multipart/form-data">//enctype pour send both data string etc w photo
     <div>
         <label for="mod">Modèle :</label>
         <input type="text" id="mod" name="modele" required>
@@ -35,12 +35,12 @@ if(isset($_POST['valider'])) {
     $p = $_POST['prix'];
     $s = $_POST['stock'];
 
-    $nom_image = $_FILES['image']['name']; // Nom du fichier
-    $destination = "images/" . $nom_image; // Chemin ou enregistrer
+    $nom_image = $_FILES['image']['name']; // Nom fichier
+    $destination = "images/" . $nom_image; // Chemin to save yji ki tdir image
 
-    // On deplace le fichier du dossier temporaire vers dossier "images"
+    // On deplace le fichier du dossier temporaire vers dossier "images" psk ydir fichier temp apres ybaet l dossier w T/F
     if(move_uploaded_file($_FILES['image']['tmp_name'], $destination)) {
-        //on enregistre le chemin dans la base de données
+        //on enregistre le chemin f bd
         $sql = "INSERT INTO montres (modele, prix, quantite_stock, image_url) 
                 VALUES ('$m', '$p', '$s', '$destination')";
         
