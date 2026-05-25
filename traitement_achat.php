@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION['user_id'])) {
     echo "<p><em>Redirection vers l'accueil...</em></p>";
     echo "</div>";
 
-    header("refresh:4; url=index.php");
+    header("refresh:1; url=index.php");
 } else {
     echo "Veuillez vous connecter pour acheter.";
     header("Location: login.php");
