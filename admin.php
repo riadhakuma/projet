@@ -33,7 +33,7 @@ include('db.php');
                 echo "<td>".$m['prix']."</td>";
                 echo "<td>".$m['quantite_stock']."</td>";
                 echo "<td>
-                        <a href='modifier.php?id=".$m['id']."' style='color:cyan;'>Modifier</a> | 
+                        <a href='modifier.php?id=".$m['id']."' style='color:cyan;'>Modifier</a>
                         <a href='supprimer.php?id=".$m['id']."' style='color:red;'>Supprimer</a>
                       </td>";
                 echo "</tr>";
