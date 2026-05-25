@@ -1,17 +1,17 @@
 <?php 
 include('db.php'); 
 session_start();
-//en cas dacces sans etre admin
+/*en cas dacces sans etre admin*/
 if($_SESSION['user_role'] != 'admin') { header("Location: login.php"); }
 
-// info dee la montre
+/* info dee la montre*/
 if(isset($_GET['id'])) {
     $id = $_GET['id'];
     $res = mysqli_query($conn, "SELECT * FROM montres WHERE id=$id");
     $data = mysqli_fetch_assoc($res);
 }
 
-// update
+/*update*/
 if(isset($_POST['update'])) {
     $id_cache = $_POST['id'];
     $mod = $_POST['modele'];

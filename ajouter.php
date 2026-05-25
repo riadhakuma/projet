@@ -9,7 +9,7 @@
 <body>
     <section>
         <h2>Ajouter une nouvelle montre</h2>
-        <form action="ajouter.php" method="POST" enctype="multipart/form-data">/*enctype pour send both data string etc w photo*/
+        <form action="ajouter.php" method="POST" enctype="multipart/form-data"><!-- enctype pour send both data string etc w photo -->
     <div>
         <label for="mod">Modèle :</label>
         <input type="text" id="mod" name="modele" required>

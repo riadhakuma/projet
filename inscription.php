@@ -8,7 +8,7 @@ if(isset($_POST['inscrire'])) {
     $verification_sql = "SELECT * FROM utilisateurs WHERE email='$email'";
     $resultat_verification = mysqli_query($conn, $verification_sql);
 
-    //trouver donc erreur
+    /*trouver donc erreur*/
     if (mysqli_num_rows($resultat_verification) > 0) {
         echo "<style>body { background-color: grey; margin: 0; padding: 0; }</style>";
         echo "<div style='color: white; text-align: center; padding: 50px; font-family: Arial;'>";
@@ -16,9 +16,9 @@ if(isset($_POST['inscrire'])) {
         echo "<p>L'adresse email <strong>" . htmlspecialchars($email) . "</strong> est déjà associée à un compte.</p>";
         echo "<p><a href='login.php' style='color:cyan;'>Se connecter avec ce compte</a> ou <a href='inscription.php' style='color:lime;'>Réessayer l'inscription</a></p>";
         echo "</div>";
-        exit(); // On stop
+        exit(); /*On stop*/
     } else {
-        // on cree sinon
+        /*on cree sinon*/
         $sql = "INSERT INTO utilisateurs (email, mot_de_passe, role, solde) VALUES ('$email', '$mdp', 'client', 10000.00)";
         
         if(mysqli_query($conn, $sql)) {

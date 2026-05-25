@@ -18,7 +18,7 @@ include('db.php');
     
     <section>
         <h2>Liste des Montres en Stock</h2>
-        <table border="1" style="width:100%; color:white; border-collapse: collapse;">/*border collapse bach ylsqo les tableau*/
+        <table border="1" style="width:100%; color:white; border-collapse: collapse;"><!-- border collapse bach ylsqo les tableau -->
             <tr style="background-color: black;">
                 <th>Modèle</th>
                 <th>Prix (DA)</th>
