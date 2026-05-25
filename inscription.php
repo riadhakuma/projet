@@ -4,7 +4,7 @@ if(isset($_POST['inscrire'])) {
     $email = $_POST['email'];
     $mdp = $_POST['password'];
 
-    //verif si l'email existe dans la base
+    /*verif si l'email existe dans la base*/
     $verification_sql = "SELECT * FROM utilisateurs WHERE email='$email'";
     $resultat_verification = mysqli_query($conn, $verification_sql);
 
@@ -28,7 +28,7 @@ if(isset($_POST['inscrire'])) {
             echo "<p>Bienvenue ! Votre compte a été configuré avec un solde initial de 10 000 DA.</p>";
             echo "<p><a href='login.php' style='color:cyan; font-weight:bold; font-size:1.2em;'>Cliquez ici pour vous connecter</a></p>";
             echo "</div>";
-            exit(); // On stop
+            exit(); /*On stop*/
         } else {
             echo "Erreur : " . mysqli_error($conn);
         }

@@ -31,7 +31,7 @@ session_start();
             <a href="index.php" style="font-size: 1.2em;"> Ma Boutique</a>//deux fois le pere em
         </div>
         <div>
-            <?php if(isset($_SESSION['user_role'])): ?>//nftho condition hka ida vrai ydir wch moraha sinon ysoti hka bach maytkhltoch les "" etc
+            <?php if(isset($_SESSION['user_role'])): ?>/* nftho condition hka ida vrai ydir wch moraha sinon ysoti hka bach maytkhltoch les "" etc*/
                 <span>Connecté : <?php echo $_SESSION['user_role']; ?></span>
                 
                 <?php if($_SESSION['user_role'] == 'client'): ?>
@@ -61,11 +61,11 @@ session_start();
 
     <section>
         <?php
-        // Requete des montres
+        /*Requete des montres*/
         $requete = "SELECT * FROM montres";
         $resultat = mysqli_query($conn, $requete);
 
-        // Boucle pour afficher chaque montre 
+        /* Boucle pour afficher chaque montre */
        while ($ligne = mysqli_fetch_assoc($resultat)) {
     echo "<article>";
     echo "<img src='" . $ligne['image_url'] . "' alt='Photo' style='width:150px;'>";

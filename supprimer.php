@@ -1,8 +1,8 @@
 <?php
 include('db.php');
-session_start(); //la session
+session_start(); /*la session*/
 
-//Seul l'admin peut supp
+/*Seul l'admin peut supp*/
 if(!isset($_SESSION['user_role']) || $_SESSION['user_role'] != 'admin') {
     header("Location: login.php");
     exit();

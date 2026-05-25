@@ -21,7 +21,7 @@ if(isset($_POST['update'])) {
     $sql = "UPDATE montres SET modele='$mod', prix='$pri', quantite_stock='$sto' WHERE id=$id_cache";
     
     if(mysqli_query($conn, $sql)) {
-        header("Location: admin.php");//retour apres modif
+        header("Location: admin.php");/*retour apres modif*/
     }
 }
 ?>

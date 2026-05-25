@@ -1,8 +1,8 @@
 <?php
 include('db.php');
-session_start(); // Permet de garder l'utilisateur connecté
+session_start(); /* Permet de garder l'utilisateur connecté*/
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {//hnaya l post bach tvirifyi belik ja b option machi lien
+if ($_SERVER["REQUEST_METHOD"] == "POST") {/*hnaya l post bach tvirifyi belik ja b option machi lien*/
     $email = $_POST['email'];
     $mdp = $_POST['password'];
 
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//hnaya l post bach tvirifyi belik ja
             }
             exit(); // tjr apres redirection 
         } else {
-            //l'email est bon mais le mot de passe nope
+            /*l'email est bon mais le mot de passe nope*/
         echo "<style>body { background-color: grey; margin: 0; padding: 0; }</style>";
         echo "<div style='color: white; text-align: center; padding: 50px; font-family: Arial;'>";
         echo "<h2 style='color:red;'>Mot de passe incorrect !</h2>";
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {//hnaya l post bach tvirifyi belik ja
         echo "</div>";
         }
         } else {
-        //email n'existe pas
+        /*email n'existe pas*/
         echo "<style>body { background-color: grey; margin: 0; padding: 0; }</style>";
         echo "<div style='color: white; text-align: center; padding: 50px; font-family: Arial;'>";
         echo "<h2 style='color:red;'>Utilisateur non trouvé !</h2>";
